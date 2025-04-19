@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Expo with Firebase Cloud Messaging
 
-## Getting Started
+A monorepo containing:
+- Next.js web app with Google Sign-In
+- Expo mobile app with WebView integration
+- Firebase Cloud Messaging (FCM) for push notifications
 
-First, run the development server:
+## 🚀 Setup
 
+### Prerequisites
+- Node.js 18+
+- Firebase project with:
+  - Google Auth enabled
+  - Android app configured for FCM
+- Expo CLI (`npm install -g expo-cli`)
+
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repo
+git clone https://github.com/yourusername/next-expo-fcm.git
+cd expo-app
+
+# Install dependencies
+cd nextjs-web && npm install
+cd expo-app && npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Running the Projects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Next.js Web App
+```bash
+cd nextjs-web
+npm run dev
+```
+- Access at: `http://localhost:3000/signin`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Expo Mobile App
+```bash
+cd expo-app
+npx expo start
+```
+- Scan QR code with Expo Go app (Android)
+- For FCM testing: Build APK with `npx expo run:android`
 
-## Learn More
+## 🔐 Firebase Configuration
 
-To learn more about Next.js, take a look at the following resources:
+1. Add these files:
+   - `web/.env.local` (Next.js):
+     ```env
+     NEXT_PUBLIC_FIREBASE_API_KEY=your-key
+     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-domain.firebaseapp.com
+     ```
+   - `mobile/google-services.json` (from Firebase Console)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Enable Google Sign-In in Firebase Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 Testing FCM Notifications
+1. Get device token from app logs
+2. Send test notification via:
+   ```bash
+   curl -X POST \
+     -H "Authorization: key=YOUR_SERVER_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "to": "DEVICE_TOKEN",
+       "notification": {
+         "title": "Test",
+         "body": "This is a test message"
+       }
+     }' \
+     "https://fcm.googleapis.com/fcm/send"
+   ```
