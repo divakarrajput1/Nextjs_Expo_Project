@@ -15,11 +15,6 @@ A monorepo containing:
 - Expo CLI (`npm install -g expo-cli`)
 
 ### Installation
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/next-expo-fcm.git
-cd expo-app
-
 # Install dependencies
 cd nextjs-web && npm install
 cd expo-app && npm install
