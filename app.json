@@ -12,6 +12,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.divakar.expoapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"

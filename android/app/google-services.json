@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "935339853682",
+    "project_id": "nextdivakar-2d86d",
+    "storage_bucket": "nextdivakar-2d86d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935339853682:android:6b254534cde51a74a7ffeb",
+        "android_client_info": {
+          "package_name": "com.divakar.expoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935339853682-2456kpnjok5jh4hlqt0cl3cuc8q0fcdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKGKTY7jkeOLT0C3f72rxNXrChFrxnn1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935339853682-2456kpnjok5jh4hlqt0cl3cuc8q0fcdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
