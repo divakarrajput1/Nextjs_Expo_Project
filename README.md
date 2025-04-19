@@ -32,7 +32,7 @@ cd expo-app && npm install
 cd nextjs-web
 npm run dev
 ```
-- Access at: `http://localhost:3000/signin`
+- Access at: `http://localhost:3000/login`
 
 ### Expo Mobile App
 ```bash
