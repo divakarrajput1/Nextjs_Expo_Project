@@ -16,6 +16,7 @@ A monorepo containing:
 
 ### Installation
 # Install dependencies
+```bash
 cd nextjs-web && npm install
 cd expo-app && npm install
 ```
